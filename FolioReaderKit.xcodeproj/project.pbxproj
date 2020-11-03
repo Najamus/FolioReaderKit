@@ -98,10 +98,10 @@
 		3A27F0C71FD9C33A00D84A57 /* Highlight+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A958F211D397BE900D56699 /* Highlight+Helper.swift */; };
 		3A27F0C81FD9C33A00D84A57 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A958F231D397BE900D56699 /* Highlight.swift */; };
 		3AD5EEB91D9433C100E42810 /* FolioReaderWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD5EEB81D9433C100E42810 /* FolioReaderWebView.swift */; };
-		8EFD0EF8255126DE0010ABE9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EF7255126DE0010ABE9 /* Roboto-Regular.ttf */; };
-		8EFD0EFA255126F20010ABE9 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EF9255126F20010ABE9 /* Roboto-Italic.ttf */; };
-		8EFD0EFC255126FC0010ABE9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EFB255126FC0010ABE9 /* Roboto-Bold.ttf */; };
-		8EFD0EFE255127090010ABE9 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EFD255127090010ABE9 /* Roboto-BoldItalic.ttf */; };
+		8EFD0EF8255126DE0010ABE9 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EF7255126DE0010ABE9 /* Lora-Regular.ttf */; };
+		8EFD0EFA255126F20010ABE9 /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EF9255126F20010ABE9 /* Lora-Italic.ttf */; };
+		8EFD0EFC255126FC0010ABE9 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EFB255126FC0010ABE9 /* Lora-Bold.ttf */; };
+		8EFD0EFE255127090010ABE9 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EFD0EFD255127090010ABE9 /* Lora-BoldItalic.ttf */; };
 		B0D6990F1D035FA2003B4CCD /* FolioReaderKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B0D6990E1D035FA2003B4CCD /* FolioReaderKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0D699161D035FA2003B4CCD /* FolioReaderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D6990B1D035FA2003B4CCD /* FolioReaderKit.framework */; };
 		B0D6991B1D035FA2003B4CCD /* FolioReaderKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6991A1D035FA2003B4CCD /* FolioReaderKitTests.swift */; };
@@ -178,10 +178,10 @@
 		3A27F08A1FD9BE5800D84A57 /* FolioReaderUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolioReaderUserDefaults.swift; sourceTree = "<group>"; };
 		3A27F08B1FD9BE5800D84A57 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3AD5EEB81D9433C100E42810 /* FolioReaderWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolioReaderWebView.swift; sourceTree = "<group>"; };
-		8EFD0EF7255126DE0010ABE9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		8EFD0EF9255126F20010ABE9 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		8EFD0EFB255126FC0010ABE9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		8EFD0EFD255127090010ABE9 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8EFD0EF7255126DE0010ABE9 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
+		8EFD0EF9255126F20010ABE9 /* Lora-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Italic.ttf"; sourceTree = "<group>"; };
+		8EFD0EFB255126FC0010ABE9 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
+		8EFD0EFD255127090010ABE9 /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-BoldItalic.ttf"; sourceTree = "<group>"; };
 		B0D6990B1D035FA2003B4CCD /* FolioReaderKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FolioReaderKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D6990E1D035FA2003B4CCD /* FolioReaderKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FolioReaderKit.h; sourceTree = "<group>"; };
 		B0D699101D035FA2003B4CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 			children = (
 				1A958F281D397BE900D56699 /* Andada */,
 				1A958F2D1D397BE900D56699 /* Lato */,
-				1A958F321D397BE900D56699 /* Roboto */,
+				1A958F321D397BE900D56699 /* Lora */,
 				1A958F371D397BE900D56699 /* Raleway */,
 			);
 			path = Fonts;
@@ -338,15 +338,15 @@
 			path = Lato;
 			sourceTree = "<group>";
 		};
-		1A958F321D397BE900D56699 /* Roboto */ = {
+		1A958F321D397BE900D56699 /* Lora */ = {
 			isa = PBXGroup;
 			children = (
-				8EFD0EFD255127090010ABE9 /* Roboto-BoldItalic.ttf */,
-				8EFD0EFB255126FC0010ABE9 /* Roboto-Bold.ttf */,
-				8EFD0EF9255126F20010ABE9 /* Roboto-Italic.ttf */,
-				8EFD0EF7255126DE0010ABE9 /* Roboto-Regular.ttf */,
+				8EFD0EFD255127090010ABE9 /* Lora-BoldItalic.ttf */,
+				8EFD0EFB255126FC0010ABE9 /* Lora-Bold.ttf */,
+				8EFD0EF9255126F20010ABE9 /* Lora-Italic.ttf */,
+				8EFD0EF7255126DE0010ABE9 /* Lora-Regular.ttf */,
 			);
-			path = Roboto;
+			path = Lora;
 			sourceTree = "<group>";
 		};
 		1A958F371D397BE900D56699 /* Raleway */ = {
@@ -537,8 +537,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A958FB21D397BE900D56699 /* Andada-Italic.otf in Resources */,
-				8EFD0EFC255126FC0010ABE9 /* Roboto-Bold.ttf in Resources */,
-				8EFD0EFA255126F20010ABE9 /* Roboto-Italic.ttf in Resources */,
+				8EFD0EFC255126FC0010ABE9 /* Lora-Bold.ttf in Resources */,
+				8EFD0EFA255126F20010ABE9 /* Lora-Italic.ttf in Resources */,
 				1A958FBF1D397BE900D56699 /* Raleway-Regular.ttf in Resources */,
 				1A958FB41D397BE900D56699 /* Lato-Bold.ttf in Resources */,
 				1A958FB31D397BE900D56699 /* Andada-Regular.otf in Resources */,
@@ -552,9 +552,9 @@
 				1A9590171D397CAF00D56699 /* FolioReaderKit.podspec in Resources */,
 				1A958FB51D397BE900D56699 /* Lato-BoldItalic.ttf in Resources */,
 				1A958FB61D397BE900D56699 /* Lato-Italic.ttf in Resources */,
-				8EFD0EF8255126DE0010ABE9 /* Roboto-Regular.ttf in Resources */,
+				8EFD0EF8255126DE0010ABE9 /* Lora-Regular.ttf in Resources */,
 				1A958FBD1D397BE900D56699 /* Raleway-BoldItalic.ttf in Resources */,
-				8EFD0EFE255127090010ABE9 /* Roboto-BoldItalic.ttf in Resources */,
+				8EFD0EFE255127090010ABE9 /* Lora-BoldItalic.ttf in Resources */,
 				1A958FB11D397BE900D56699 /* Andada-BoldItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
