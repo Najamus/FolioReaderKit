@@ -282,19 +282,12 @@ class FolioReaderQuoteShare: UIViewController {
         shareItems.append(imageQuote)
 
         
-        let newImg = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
-        newImg.backgroundColor = .black
-        newImg.contentMode = .scaleAspectFit
-        newImg.image = imageQuote
-        self.view.addSubview(newImg)
-        return
-        
         if let bookShareLink = self.readerConfig.localizedShareWebLink {
             text += "\n\(bookShareLink.absoluteString)"
         }
 
-        let act = FolioReaderSharingProvider(subject: subject, text: text)
-        shareItems.insert(act, at: 0)
+//        let act = FolioReaderSharingProvider(subject: subject, text: text)
+//        shareItems.insert(act, at: 0)
 
         let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
         activityViewController.excludedActivityTypes = [UIActivity.ActivityType.print, UIActivity.ActivityType.postToVimeo]
