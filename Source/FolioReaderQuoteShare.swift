@@ -281,6 +281,12 @@ class FolioReaderQuoteShare: UIViewController {
         let imageQuote = UIImage.imageWithView(filterImage)
         shareItems.append(imageQuote)
 
+        
+        let newImg = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+        newImg.image = imageQuote
+        self.view.addSubview(newImg)
+        return
+        
         if let bookShareLink = self.readerConfig.localizedShareWebLink {
             text += "\n\(bookShareLink.absoluteString)"
         }
