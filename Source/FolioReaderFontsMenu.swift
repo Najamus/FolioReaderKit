@@ -11,7 +11,7 @@ import UIKit
 public enum FolioReaderFont: Int {
     case andada = 0
     case lato
-    case lora
+    case roboto
     case raleway
 
     public static func folioReaderFont(fontName: String) -> FolioReaderFont? {
@@ -19,7 +19,7 @@ public enum FolioReaderFont: Int {
         switch fontName {
         case "andada": font = .andada
         case "lato": font = .lato
-        case "lora": font = .lora
+        case "roboto": font = .roboto
         case "raleway": font = .raleway
         default: break
         }
@@ -30,7 +30,7 @@ public enum FolioReaderFont: Int {
         switch self {
         case .andada: return "andada"
         case .lato: return "lato"
-        case .lora: return "lora"
+        case .roboto: return "roboto"
         case .raleway: return "raleway"
         }
     }
@@ -168,7 +168,7 @@ class FolioReaderFontsMenu: UIViewController, SMSegmentViewDelegate, UIGestureRe
 
         fontName.addSegmentWithTitle("Andada", onSelectionImage: nil, offSelectionImage: nil)
         fontName.addSegmentWithTitle("Lato", onSelectionImage: nil, offSelectionImage: nil)
-        fontName.addSegmentWithTitle("Lora", onSelectionImage: nil, offSelectionImage: nil)
+        fontName.addSegmentWithTitle("Roboto", onSelectionImage: nil, offSelectionImage: nil)
         fontName.addSegmentWithTitle("Raleway", onSelectionImage: nil, offSelectionImage: nil)
 
 //        fontName.segments[0].titleFont = UIFont(name: "Andada-Regular", size: 18)!
