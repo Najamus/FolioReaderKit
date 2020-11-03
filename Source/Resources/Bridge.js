@@ -50,7 +50,7 @@ function removeClass(ele,cls) {
 // Font name class
 function setFontName(cls) {
     var elm = document.documentElement;
-    removeClass(elm, "roboto");
+    removeClass(elm, "andada");
     removeClass(elm, "lato");
     removeClass(elm, "lora");
     removeClass(elm, "raleway");

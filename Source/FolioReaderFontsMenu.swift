@@ -17,7 +17,7 @@ public enum FolioReaderFont: Int {
     public static func folioReaderFont(fontName: String) -> FolioReaderFont? {
         var font: FolioReaderFont?
         switch fontName {
-        case "roboto": font = .andada
+        case "andada": font = .andada
         case "lato": font = .lato
         case "lora": font = .lora
         case "raleway": font = .raleway
