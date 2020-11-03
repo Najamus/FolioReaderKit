@@ -282,7 +282,9 @@ class FolioReaderQuoteShare: UIViewController {
         shareItems.append(imageQuote)
 
         
-        let newImg = UIImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+        let newImg = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 120))
+        newImg.backgroundColor = .black
+        newImg.contentMode = .scaleAspectFit
         newImg.image = imageQuote
         self.view.addSubview(newImg)
         return
