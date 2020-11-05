@@ -145,9 +145,9 @@ class FolioReaderQuoteShare: UIViewController {
             "logoImageView": self.logoImageView
             ] as [String : Any]
 
-        NSLayoutConstraint.constraints(withVisualFormat: "V:|-40-[quoteLabel]-20-[titleLabel]", options: [], metrics: nil, views: views).forEach { constraints.append($0) }
+        NSLayoutConstraint.constraints(withVisualFormat: "V:|-24-[quoteLabel]-16-[titleLabel]", options: [], metrics: nil, views: views).forEach { constraints.append($0) }
         NSLayoutConstraint.constraints(withVisualFormat: "V:[titleLabel]-0-[authorLabel]", options: [], metrics: nil, views: views).forEach { constraints.append($0) }
-        NSLayoutConstraint.constraints(withVisualFormat: "V:[authorLabel]-25-[logoImageView(\(Int(logoHeight)))]-18-|", options: [], metrics: nil, views: views).forEach { constraints.append($0) }
+        NSLayoutConstraint.constraints(withVisualFormat: "V:[authorLabel]-16-[logoImageView(\(Int(logoHeight)))]-18-|", options: [], metrics: nil, views: views).forEach { constraints.append($0) }
 
         NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[quoteLabel]-15-|", options: [], metrics: nil, views: views).forEach { constraints.append($0) }
         NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[titleLabel]-15-|", options: [], metrics: nil, views: views).forEach { constraints.append($0) }
@@ -229,9 +229,7 @@ class FolioReaderQuoteShare: UIViewController {
 
     func selectIndex(_ index: Int) {
         let quoteImage = dataSource[index]
-        // Camera remove by Najam
-//        let row = index+1
-        let row = index
+        let row = index+1
 
         filterImage.backgroundColor = quoteImage.backgroundColor
         imageView.alpha = quoteImage.alpha
@@ -322,9 +320,7 @@ class FolioReaderQuoteShare: UIViewController {
 
 extension FolioReaderQuoteShare: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Camera remove by Najam
-        return dataSource.count
-//        return dataSource.count + 1
+        return dataSource.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -344,22 +340,21 @@ extension FolioReaderQuoteShare: UICollectionViewDataSource {
             cell.contentView.addSubview(imageView)
         }
 
-        // Camera remove by Najam
-//        guard ((indexPath as NSIndexPath).row > 0) else {
-//
-//            // Image color
-//            let normalColor = UIColor(white: 0.5, alpha: 0.7)
-//            let camera = UIImage(readerImageNamed: "icon-camera")
-//            let dash = UIImage(readerImageNamed: "border-dashed-pattern")
-//            let cameraNormal = camera?.imageTintColor(normalColor)
-//
-//            imageView.contentMode = .center
-//            imageView.image = cameraNormal
-//            if let dashNormal = dash?.imageTintColor(normalColor) {
-//                cell.contentView.layer.borderColor = UIColor(patternImage: dashNormal).cgColor
-//            }
-//            return cell
-//        }
+        guard ((indexPath as NSIndexPath).row > 0) else {
+
+            // Image color
+            let normalColor = UIColor(white: 0.5, alpha: 0.7)
+            let camera = UIImage(readerImageNamed: "icon-camera")
+            let dash = UIImage(readerImageNamed: "border-dashed-pattern")
+            let cameraNormal = camera?.imageTintColor(normalColor)
+
+            imageView.contentMode = .center
+            imageView.image = cameraNormal
+            if let dashNormal = dash?.imageTintColor(normalColor) {
+                cell.contentView.layer.borderColor = UIColor(patternImage: dashNormal).cgColor
+            }
+            return cell
+        }
 
         if (selectedIndex == (indexPath as NSIndexPath).row) {
             cell.contentView.layer.borderColor = self.readerConfig.tintColor.cgColor
@@ -368,9 +363,7 @@ extension FolioReaderQuoteShare: UICollectionViewDataSource {
             cell.contentView.layer.borderColor = UIColor(white: 0.5, alpha: 0.2).cgColor
         }
 
-        // Camera remove by Najam
-        let quoteImage = dataSource[(indexPath as NSIndexPath).row]
-//        let quoteImage = dataSource[(indexPath as NSIndexPath).row-1]
+        let quoteImage = dataSource[(indexPath as NSIndexPath).row-1]
         imageView.image = quoteImage.image
         imageView.alpha = quoteImage.alpha
         imageView.contentMode = .scaleAspectFit
@@ -388,34 +381,32 @@ extension FolioReaderQuoteShare: UICollectionViewDataSource {
 extension FolioReaderQuoteShare: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        //         Camera remove by Najam
-//        guard (indexPath as NSIndexPath).row > 0 else {
-//            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//            
-//            let takePhoto = UIAlertAction(title: self.readerConfig.localizedTakePhoto, style: .default, handler: { (action) -> Void in
-//                self.imagePicker.sourceType = .camera
-//                self.imagePicker.allowsEditing = true
-//                self.present(self.imagePicker, animated: true, completion: nil)
-//            })
-//            
-//            let existingPhoto = UIAlertAction(title: self.readerConfig.localizedChooseExisting, style: .default) { (action) -> Void in
-//                self.imagePicker.sourceType = .photoLibrary
-//                self.imagePicker.allowsEditing = true
-//                self.present(self.imagePicker, animated: true, completion: nil)
-//            }
-//            
-//            let cancel = UIAlertAction(title: self.readerConfig.localizedCancel, style: .cancel, handler: nil)
-//            
-//            alertController.addAction(takePhoto)
-//            alertController.addAction(existingPhoto)
-//            alertController.addAction(cancel)
-//            
-//            present(alertController, animated: true, completion: nil)
-//            return
-//        }
-//        
-//        selectIndex((indexPath as NSIndexPath).row-1)
-        selectIndex((indexPath as NSIndexPath).row)
+        guard (indexPath as NSIndexPath).row > 0 else {
+            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            
+            let takePhoto = UIAlertAction(title: self.readerConfig.localizedTakePhoto, style: .default, handler: { (action) -> Void in
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.allowsEditing = true
+                self.present(self.imagePicker, animated: true, completion: nil)
+            })
+            
+            let existingPhoto = UIAlertAction(title: self.readerConfig.localizedChooseExisting, style: .default) { (action) -> Void in
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.allowsEditing = true
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            
+            let cancel = UIAlertAction(title: self.readerConfig.localizedCancel, style: .cancel, handler: nil)
+            
+            alertController.addAction(takePhoto)
+            alertController.addAction(existingPhoto)
+            alertController.addAction(cancel)
+            
+            present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        selectIndex((indexPath as NSIndexPath).row-1)
     }
 }
 
