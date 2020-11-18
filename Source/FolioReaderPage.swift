@@ -134,7 +134,7 @@ open class FolioReaderPage: UICollectionViewCell, WKNavigationDelegate, UIGestur
             
             if result.components(separatedBy: " ").count > 1 {
                 if result != self.lastSelectedText {
-                    if result.contains(self.lastSelectedText) {
+                    if result.contains(self.lastSelectedText) || self.lastSelectedText.contains(result) {
                         self.webView?.remove(nil)
                     }
                     self.lastSelectedText = result
