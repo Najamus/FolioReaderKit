@@ -44,6 +44,9 @@ open class FolioReaderWebView: WKWebView {
 
         let configuration = WKWebViewConfiguration()
         configuration.dataDetectorTypes = .link
+        let source = "document.addEventListener('touchend', function(){ window.webkit.messageHandlers.iosListener.postMessage('click clack!'); })"
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        configuration.userContentController.addUserScript(script)
         super.init(frame: frame, configuration: configuration)
         FolioReaderScript.cssInjection.addIfNeeded(to: self)
         FolioReaderScript.bridgeJS.addIfNeeded(to: self)

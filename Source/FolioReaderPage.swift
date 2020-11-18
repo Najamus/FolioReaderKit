@@ -44,6 +44,8 @@ open class FolioReaderPage: UICollectionViewCell, WKNavigationDelegate, UIGestur
     open var pageNumber: Int!
     open var webView: FolioReaderWebView?
 
+    fileprivate var lastSelectedText = ""
+
     fileprivate var colorView: UIView!
     fileprivate var shouldShowBar = true
     fileprivate var menuIsVisible = false
@@ -87,6 +89,7 @@ open class FolioReaderPage: UICollectionViewCell, WKNavigationDelegate, UIGestur
             self.contentView.addSubview(webView!)
         }
         webView?.navigationDelegate = self
+        webView?.configuration.userContentController.add(self, name: "iosListener")
 
         if colorView == nil {
             colorView = UIView()
@@ -119,6 +122,27 @@ open class FolioReaderPage: UICollectionViewCell, WKNavigationDelegate, UIGestur
 
         webView?.setupScrollDirection()
         webView?.frame = webViewFrame()
+    }
+    
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("message: \(message.body)")
+        // and whatever other actions you want to take
+        self.webView?.js("getSelectedText()") { result in
+            guard let result = result, !result.isEmpty else {
+                return
+            }
+            
+            if result.components(separatedBy: " ").count > 1 {
+                if result != self.lastSelectedText {
+                    if result.contains(self.lastSelectedText) {
+                        self.webView?.remove(nil)
+                    }
+                    self.lastSelectedText = result
+                    self.webView?.highlight(nil)
+                }
+            }
+            
+        }
     }
 
     func webViewFrame() -> CGRect {
