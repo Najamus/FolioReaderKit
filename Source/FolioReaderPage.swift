@@ -89,8 +89,21 @@ open class FolioReaderPage: UICollectionViewCell, WKNavigationDelegate, UIGestur
             self.contentView.addSubview(webView!)
         }
         webView?.navigationDelegate = self
-        webView?.configuration.userContentController.add(self, name: "iosListener")
 
+        var found = false
+        for item in webView?.configuration.userContentController.userScripts ?? [] {
+            if item.source.contains("iosListener") {
+                found = true
+                break
+            }
+        }
+        if !found {
+            let source = "document.addEventListener('touchend', function(){ window.webkit.messageHandlers.iosListener.postMessage('click clack!'); })"
+            let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+            webView?.configuration.userContentController.addUserScript(script)
+            webView?.configuration.userContentController.add(self, name: "iosListener")
+        }
+        
         if colorView == nil {
             colorView = UIView()
             colorView.backgroundColor = self.readerConfig.nightModeBackground
