@@ -1005,6 +1005,17 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
         
         return CGFloat((100 * current) / total)
     }
+    
+    public func getLastChapterProgress() -> CGFloat {
+        let total = totalPages
+        let current = currentPageNumber-1
+        
+        if total == 0 {
+            return 0
+        }
+        
+        return CGFloat((100 * current) / total)
+    }
 
     /**
      Find and return the current chapter name.
