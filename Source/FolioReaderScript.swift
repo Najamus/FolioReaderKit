@@ -15,7 +15,7 @@ class FolioReaderScript: WKUserScript {
             super.init(source: source,
                        injectionTime: .atDocumentEnd,
                        forMainFrameOnly: true,
-                       in: .defaultClient)
+                       in: .page)
         } else {
             // Fallback on earlier versions
             super.init(source: source,
